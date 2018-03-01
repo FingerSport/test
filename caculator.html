@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title style>Caculator Web Version</title>
+	<link rel="stylesheet" type="text/css" href="CSS/calculator.css">
+</head>
+<body>
+	<header>Calculator v1.0</header>
+	<hr>
+	<table  align="center";>
+		<caption><span><input type="text" id="cal" value="" placeholder="0"> &nbsp; &nbsp; &nbsp;<input type="button" id="cal_result" onclick="on_cal_click();" value="计算" /></span><br><br><tr></tr></caption>
+		
+			<tr>
+				<th><button id="id-btn-1" onclick="on_btn_click(this.id);" value="1" >1</button></th>
+				<th><button id="id-btn-2" onclick="on_btn_click(this.id);" value="2" >2</button></th>
+				<th><button id="id-btn-3" onclick="on_btn_click(this.id);" value="3" >3</button></th>
+				<th><button id="id-btn-add" onclick="on_btn_click(this.id);" value="+"; >&plus;</button></th>
+			</tr>
+			<tr>
+				<th><button id="id-btn-4" onclick="on_btn_click(this.id);" value="4">4</button></th>
+				<th><button id="id-btn-5" onclick="on_btn_click(this.id);" value="5">5</button></th>
+				<th><button id="id-btn-6" onclick="on_btn_click(this.id);" value="6">6</button></th>
+				<th><button id="id-btn-minus" onclick="on_btn_click(this.id);" value="-">&minus;</button></th>
+			</tr>
+		   <tr>
+				<th><button id="id-btn-7" onclick="on_btn_click(this.id)" value="7">7</button></th>
+				<th><button id="id-btn-8" onclick="on_btn_click(this.id)" value="8">8</button></th>
+				<th><button id="id-btn-9" onclick="on_btn_click(this.id)" value="9">9</button></th>
+				<th><button id="id-btn-times" onclick="on_btn_click(this.id)" value="*">&times;</button></th>
+			</tr>
+			<tr>
+				<th><button id="id-btn-0" onclick="on_btn_click(this.id)" value="0">0</button></th>
+				<th><button id="id-btn-c" onclick="on_btn_click(this.id)" value="c">C</button></th>
+				<th><button id="id-btn-equal" onclick="on_btn_click(this.id)" value="=">=</button></th>
+				<th><button id="id-btn-divide" onclick="on_btn_click(this.id)" value="/">&divide;</button></th>
+			</tr>
+	
+	</table>
+	<script type="text/javascript" charset="utf-8" >
+	    flag = 0;
+		function on_cal_click(){
+			var resul0 = document.getElementById('cal').value;
+			var resul1 = eval(resul0);
+			document.getElementById('cal').value = resul1;
+			flag = 1;
+		}
+
+		function on_btn_click(thisid){
+			var btn = document.getElementById(thisid);
+			var v_value = btn.value;
+			console.log(v_value);
+			if (flag) {document.getElementById('cal').value = ''; flag = 0;}
+			if(v_value == "c"){
+				document.getElementById("cal").value="";
+			}
+			else if(v_value == "="){
+				on_cal_click();
+			}else {
+				document.getElementById("cal").value += v_value;
+			}
+		}
+		
+	</script>
+</body>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<style type="text/css" >
+	body {
+    font-family: Sans-Serif;
+    font-style: normal;
+}
+header {
+    font-size: inherit;
+}
+div.header-top {
+    margin: 4px;
+    padding: 4px;
+    text-align: center;
+    font-size: small;
+}
+div.header-nav {
+    margin: 4px;
+    padding: 4px;
+    text-align: center;
+    font-size: medium;
+}
+span.span-nav-left {
+    font-size: small;
+    writing-mode: tb-rl;
+    outline: #888 solid thin;
+}
+span.span-nav-center {
+    margin: 4px;
+    padding: 4px;
+    font-family: "Microsoft YaHei UI", serif;
+    font-size: x-large;
+    letter-spacing: 16px;
+    text-shadow: 0px 0px 8px #333;
+    text-align: center;
+}
+span.span-nav-right {
+    font-size: small;
+    writing-mode: tb-rl;
+}
+div.header-bottom {
+    margin: 2px;
+    padding: 2px;
+    font-size: small;
+    text-align: center;
+}
+span.span-left {
+    float: left;
+    text-decoration: underline;
+}
+span.span-center {
+    margin: 4px;
+    padding: 4px;
+    font-family: "楷体";
+    font-size: 12.5px;
+    font-style: italic;
+    letter-spacing: 2px;
+    text-align: center;
+    color: #888;
+}
+span.span-right {
+    float: right;
+    text-align: right;
+}
+#main {
+    margin: 2px;
+    padding: 2px;
+    font-size: inherit;
+}
+span.span-bignews {
+    float: left;
+    margin: 4px;
+    padding: 2px;
+    width: 95%;
+    border: 1px solid #fff;
+}
+span p.p-bigtitle {
+    margin: 2px;
+    padding: 2px;
+    font-family: 'Microsoft Yahei', serif;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 8px;
+    text-align: center;
+    color: #333;
+}
+span.span-news {
+    float: left;
+    margin: 4px;
+    padding: 2px;
+    width: 30%;
+    height: auto;
+    border: 1px solid #fff;
+}
+span p.p-title {
+    margin: 2px;
+    padding: 2px;
+    font-family: 'Microsoft Yahei', serif;
+    font-size: 13.5px;
+    font-weight: bold;
+    letter-spacing: 4px;
+    text-align: center;
+    color: #666;
+}
+span p.p-author {
+    margin: 2px;
+    padding: 2px;
+    font-size: 9.5px;
+    font-style: italic;
+    text-align: right;
+}
+span p.p-content {
+    margin: 2px;
+    padding: 2px;
+    font-size: small;
+    text-indent: 1em;
+    color: #888;
+}
+span.span-news-img {
+    float: left;
+    margin: 4px;
+    padding: 2px;
+    width: 46%;
+    height: auto;
+    border: 1px solid #fff;
+}
+span p.p-img {
+    margin: 2px;
+    padding: 2px;
+    font-size: small;
+    text-indent: 1em;
+    color: #888;
+}
+	</style>
+
+	<title>CSS -- Newspaper</title>
+</head>
+<body>
+<header>
+	<div class="header-top">
+		<span class="span-left">ABC news</span>
+		<span class="span-center"></span>
+		<span class="span-right"><<img src="images/stuy.jpg" alt="#"></span>
+	</div>
+	<div class="header-nav">
+		<span class="span-nav-left">Mian Menu</span>
+		<span class="span-nav-center">Newspaper Style</span>
+		<span class="span-nav-right">Mian Editor</span>
+	</div>
+	<div class="header-bottom">
+		<span class="span-left">The 6th </span>
+		<span class="span-center">&nbsp; &nbsp; &nbsp;&nbsp;CSS Base Style Application</span>
+		<span class="span-right">20180213</span>
+	</div>
+	</header>
+	<hr>
+	<div id="main">
+		<span class="span-bignews">
+			<p class="p-bigtitle">NEWS TITLE</p>
+			<p class="p-author">author</p>
+			<p class="p-content"> .......</p>
+		</span>
+		<span class="span-news">
+			<p class="p-title">NEWS TITLE</p>
+			<p class="p-author">author</p>
+			<p class="p-content">...</p>
+		</span>
+		<span class="span-news">
+			<p class="p-title">NEWS TITLE</p>
+			<p class="p-author">author</p>
+			<p class="p-content">...</p>
+		</span>
+		<span class="span-news-image">
+			<p class="p-title">image news</p>
+			<p class="p-author">author</p>
+			<p class="p-img"><img src="images/stdy.jpg" alt="#">image news</p>
+
+		</span>
+		<span class="span-news-image">
+			<p class="p-title">image news</p>
+			<p class="p-author">author</p>
+			<p class="p-img"><img src="images/stdy.jpg" alt="#">image news</p>
+		</span>
+	</div>
+</header>
+</body>
+</html>

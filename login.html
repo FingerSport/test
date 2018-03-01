@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Html5+CSS</title>
+	<style type="text/css" >
+	table{
+		position: relative;
+		margin: 8px auto;
+
+	}
+	caption {
+		margin: 8px;
+		padding: 8px;
+		font:bold 16px arial,snas-serif;
+	}
+	td{
+		margin: 8px;
+		padding: 8px;
+	}
+	td.td-right{
+		text-align: right;
+
+	}
+	input{
+		width: 128px;
+	}
+	td:hover {
+		background-color: #2f2f2f;
+	}
+	</style>
+</head>
+
+<body>
+<header >
+	<nav style="text-align: center;">
+	HTML5+CSS3 - Login Page	
+	</nav>
+	
+</header>
+<hr>
+<form>
+	<table cellpadding="8" cellspacing="8" style="border-collapse:collapse;">
+		<caption>
+			login system
+		</caption>
+		<tr>
+			<td class="td-right"> user id:</td>
+			<td>
+				<input type="text" id="userid" name="userid" placeholder="please input your id">
+			</td>
+			<td class="td-right">
+			<span id="id-span-userid"></span>
+			</td>
+		</tr>
+		<tr>
+			<td class="td-right">password:</td>
+			<td>
+				<input type="password" name="password" id="password" placeholder="*****">
+			</td>
+			<td class="td-right">
+				<span id="id-span-pwd"></span>
+			</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td class="td-right">
+				<button type="reset" id="id-reset">Reset</button>
+				<button type="submit" id="id-submit">Submit</button>
+			</td>
+            <td class="td-right"></td>
+		</tr>
+	</table>
+</form>	
+</body>
+</html>
