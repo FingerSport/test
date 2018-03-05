@@ -7,16 +7,17 @@
 	<link rel="stylesheet" href="">
 </head>
 
-<body>
+<body onload="simulation();">
 	<div id="box1">
 		<span>Words!</span>
-		<img id="bgimg" src="./images/01.jpg"; alt="#"> 
-		
+		<div id="bgimg" ></div> 
 	</div>
+
+	<p id='pp'></p>
 <style type="text/css">
 	*{padding: 0;margin:0;}
 	#box1 {
-		left: 500px;
+		margin: 0 auto;
 		width: 200px;
 		height: 200px;
 		border-radius: 50%;
@@ -27,7 +28,8 @@
 		text-align: center;
 		
 	}
-    #box1 img{
+    #box1 #bgimg{
+    	background: url(https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1486826859,4031998705&fm=200&gp=0.jpg);
 		width: 160px;
 		height: 160px;
 		display: block;
@@ -36,6 +38,7 @@
 		z-index: 1;
 		border-radius: 50%;
 		transition: 1s;
+		background-origin: border-box;
 	}
 
 	#box1 span {
@@ -53,7 +56,7 @@
 		transform: rotate(0deg);
 	}
 
-	#box1:hover img{
+	#box1:hover #bgimg{
 		transform: rotateY(180deg);
 		transform-origin: left;
 
@@ -63,7 +66,52 @@
 		transform: rotate(360deg);
 
 	}
-
+#pp{
+	font-size: 20px;
+	text-align: center;
+	margin:0 auto;
+	color:green;
+	font-weight: bold;
+}
 </style>
+<script type="text/javascript">
+
+var simulation = function(){
+	var stimes = 10000;
+	var q = new Array(1,0,0,0);
+	var chouqu=[0,0,0,0];
+	var j=0,k=0;
+	flag=0;flag1=0;flag2=0,count=0;
+	//模拟10次
+	while (k<10000) {
+		// statement
+		var aa = Math.floor( Math.random(1)*4);
+		chouqu[aa] = 1;
+		for (i=0;i<4;i++){
+		if(i!==aa)
+		chouqu[i] = 0;
+	//	console.log(chouqu[i]);
+	}
+	//chouqu为一个四位数组，其中1的位置代表中奖的位置；
+		if (chouqu[1]==0)
+		{
+		count ++;
+		if(chouqu[0]==1)
+		flag++;
+		else if((chouqu[0]==0)&&(chouqu[1]==0)&&(chouqu[2]==1))
+		flag1++;
+		else if((chouqu[0]==0)&&(chouqu[1]==0)&&(chouqu[3]==1))
+		flag2++;}
+
+	k++;
+	}
+	
+	var p1 = document.getElementById('pp');
+	p1.innerHTML = '10000次中奖中策略1中奖次数:'+ flag+'中奖概率为：'+flag/10000+'<br>'+'10000次中奖中策略2-1中奖次数:'+Math.floor(flag1/2)+'中奖概率为：'+flag1/count+
+	'<br>'+'10000次中奖中策略2-2中奖次数:'+Math.floor(flag2/2)+'中奖概率为：'+flag2/count;
+}
+
+</script>
 </body>
 </html>
+
