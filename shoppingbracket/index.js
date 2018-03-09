@@ -18,7 +18,7 @@ var app = new Vue({
 		},
 		{	id:3,
 			name:'macbook pro',
-			price:2199,
+			price:21999,
 			count:1
 
 		}
@@ -36,14 +36,14 @@ var app = new Vue({
 	}
 	},
 	methods:{
-		handleReduce:function(){
+		handleReduce:function(index){
 			if(this.list[index].count==1) return;
 			this.list[index].count--;
 		},
-		handleAdd:function(){
+		handleAdd:function(index){
 			this.list[index].count++;
 		},
-		handleRemove:function(){
+		handleRemove:function(index){
 			this.list.splice(index,1);
 		}
 

@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>shopping basket</title>
-	<link rel="stylesheet" href="./style.css">
+	<link rel="stylesheet" href="style.css">
 </head>
 <body>
 	<!-- 建立空盒子div -->
@@ -26,7 +26,7 @@
 					<td>{{item.name}}</td>
 					<td>{{item.price}}</td>
 					<td>
-						<button  @click="handleReduce(index)" :disable="item.count==1" >-</button>
+						<button  @click="handleReduce(index)" :disable="item.count===1" >-</button>
 						{{item.count}}
 						<button  @click="handleAdd(index)"  >+</button>
 					</td>
@@ -36,14 +36,15 @@
 				</tr>
 			</tbody>
 		</table>
+		<div>总价：￥{{totalPrice}}</div>
 		</template>
 		<div v-else>购物车为空</div>
 	</div>
 
 
 
-<script src="../vue.min.js">
-<script src="./index.js" type="text/javascript" charset="utf-8" async defer></script>
+<script src="../vue.min.js"></script>
+<script src="index.js" type="text/javascript" charset="utf-8" ></script>
 
 </body>
 </html>
