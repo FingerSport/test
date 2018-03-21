@@ -10,7 +10,9 @@ Vue.component('input-number',{
 				type="text" \
 				:value="currentValue" \
 				@change="handleChange" \
-				@focus="kbSupport"> \
+				@focus="kbSupport" \
+				@keydown.38="kbup" \
+				@keydown.40="kbdown"> \
 			<button \
 				@click="handleDown" \
 				:disable="currentValue <= min "> - </button> \
@@ -30,11 +32,17 @@ Vue.component('input-number',{
 		value:{
 			type:Number,
 			default:0
+		},
+		step:{
+			type:Number,
+			default:2
 		}
 	},
 		data:function(){
 		return {
-			currentValue:this.value
+			currentValue:this.value,
+			kbSupport_flag:false,
+			step:this.step
 		}
 	},
 	watch:{
@@ -50,11 +58,11 @@ Vue.component('input-number',{
 
 		handleDown:function(){
 			if(this.currentValue <= this.min) return;
-			this.currentValue -= 1;
+			this.currentValue -= this.step;
 		},
 		handleUp:function(){
 			if(this.currentValue >= this.max) return;
-			this.currentValue += 1;
+			this.currentValue += this.step;
 		},
 		updateValue:function(val){
 			if(val>this.max)  val = this.max;
@@ -63,11 +71,14 @@ Vue.component('input-number',{
 		},
 
 		kbSupport:function() {
-		document.onkeydown = keyd;
-		function keyd(event) {
-		 	if (window.event.keyCode == 40 )  console.log('down'); //this.currentValue -= 1;
-		 	if (window.event.keyCode == 38 )  console.log('up'); //this.currentValue += 1;
-		}},
+			kbSupport_flag = true;
+		},
+		kbdown:function(){
+			if(kbSupport_flag)  this.handleDown();
+		},
+		kbup:function(){
+			if(kbSupport_flag)  this.handleUp();
+		},
 
 		handleChange:function(){
 			var val = event.target.value.trim();

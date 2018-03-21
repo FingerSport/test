@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>	
+</head>
+
+<body>
+
+<div class="page1">	
+	<p slot="p1">1.Your gender please!</p>
+	<input type="radio" checked="cheked" name="gender" \> male
+	<input type="radio" checked="cheked" name="gender" \> female
+	<input type="radio" checked="cheked" name="gender" \> classified
+	<button-nextstep>nextstep</button-nextstep>
+	<button-reset>reset</button-reset>
+</div>
+
+<div class="page2">
+	<p slot="p2">2.Your hobby!</p>
+	<input type="radio"  checked="" name="book" \> Reading 
+	<input type="radio"  checked=""	name="swi" \> Swimming
+	<input type="radio"  checked=""	name="jog" \> Jogging
+	<input type="radio"  checked="" name="film" \> Film
+	<input type="radio"  checked="" name="music" \> Music
+	<button-nextstep>nextstep</button-nextstep>
+	<button-prestep> prestep</button-prestep>
+	<button-reset> reset</button-reset>
+</div>
+
+<div class="page3">
+	<p slot="p3">3.introduce yourself </p> 
+	<input type="text" placeholder="not less than 100 words." \>
+	<button-submit>Submit</button-submit>
+	<button-prestep>presetep</button-prestep>
+	<button-reset> reset </button-reset>
+
+</div>
+
+
+<script src="../vue.min.js" type="text/javascript"></script>
+	<script src="index.js" type="text/javascript" ></script>
+</body>
+</html>
