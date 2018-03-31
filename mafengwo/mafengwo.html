@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title></title>
-	<link rel="stylesheet" href="mafengwo.css" type="text/css">
+	<!-- <link rel="stylesheet" href="mafengwo.css" type="text/css"> -->
 </head>
 <body>
 	<nav>
@@ -13,14 +13,56 @@
 		</ul>
 	</nav>
 
-	<div>
-		<span>new1</span>
-		<span>new2</span>
+<div id="contain">
+	<div id="container"> 
+		<img src="./1.png">
+		<img src="./2.png">
+		<img src="./3.png">
+		<img src="./4.png">
+		<img src="./5.png">
+		<img src="./6.png">
 	</div>
+	<div style="clear:both;"></div>
+</div>
+
+<div style="height: 500px; position:relative; "></div>
+
+
+
 <style type="text/css" >
 *{
 	margin: 0;
 	padding: 0;
+}
+
+#contain {
+	background: black;
+	left:300px;
+	height:500px;
+	overflow: hidden;
+	perspective: 1200px ;
+}
+
+
+#container {
+	/*background: black;*/
+	position: relative;
+	left:300px;
+	height: 500px;
+	transform-style: preserve-3d;
+	padding: 2px;
+	margin:2px;
+	height:500px;
+	width: 800px;
+	transition: all 1s;
+
+}
+
+#container img{
+	position:absolute;
+	left:300px;
+	top:100px;
+	border:solid 3px red;
 }
 
 nav {
@@ -37,7 +79,6 @@ nav ul li#wl {
 	font-weight: bold;
 	color: #fff;
 	background: #2f2f2f;
-	position: absolute;
 }
 
 nav ul li#wl:after{
@@ -47,18 +88,6 @@ nav ul li#wl:after{
 	width: 300px;
 	display: block;
 	background: #f00;
-}
-span {
-	position: absolute;
-	background: black;
-	display: block;
-	margin-top: 20px;
-	padding-top: 20px;
-}
-
-span:first-child {
-	margin-bottom: 20px;
-	position: relative;
 }
 	
 </style>
