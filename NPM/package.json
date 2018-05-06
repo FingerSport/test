@@ -4,7 +4,8 @@
   "description": "webpack js",
   "main": "index.js",
   "scripts": {
-    "test": "console.log('hello world')"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack-dev-server --open --config webpack.config.js"
   },
   "repository": {
     "type": "git",
@@ -23,6 +24,7 @@
     "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^1.1.11",
     "html-webpack-plugin": "^3.1.0",
+    "require": "^2.4.20",
     "style-loader": "^0.20.3",
     "url-loader": "^1.0.1",
     "vue-hot-reload-api": "^2.3.0",
@@ -32,10 +34,12 @@
     "vue-template-compiler": "^2.5.16",
     "vuex": "^3.0.1",
     "webpack": "^4.4.1",
+    "webpack-cli": "^2.0.13",
     "webpack-dev-server": "^3.1.1",
     "webpack-merge": "^4.1.2"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "vue": "^2.5.16"
   }
 }

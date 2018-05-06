@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+  <head>
+    <meta name="canvans application">
+    <title>
+     2D animation
+    </title>
+  </head>
+  <body>
+    <canvas id="cans1" style="height: 300px; width: 800px; border: solid 2px red">
+      this is canvans
+    </canvas>
+
+  </body>
+  <footer>
+    <script type="text/javascript">
+     var cans = document.getElementById("cans1");
+     cans =  cans.getContext("2d");
+     cans.strockStyle = "yellow solid 2px";
+     cans.fillStyle = "green";
+     cans.strokeRect(30,30,200, 80);
+    </script>
+  </footer>
+</html>
