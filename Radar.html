@@ -1,0 +1,92 @@
+<!doctype html5>
+<html>
+  <titel style="display: block;text-align: center;">Radar video</titel>
+  <head>
+  <style type="text/css">
+  * {
+    padding:0;
+    margin:0;
+  }
+  div #r1{
+    position: relative;
+    height: 510px;
+    width: 510px;
+    background-color: black;
+  }
+  div #r2, #r3{
+    position: absolute;
+    border-radius: 50%;
+    border:solid  4px green ;
+  }
+  div #r2{
+
+    height: 500px;
+    width: 500px;
+    z-index: 20;
+  }
+  div #r3{
+    left: 100px;
+    top:100px;
+    height: 300px;
+    width: 300px;
+    z-index: 30;
+  }
+  div #box1,#box2,#box3,#box4{
+    height: 50%;
+    width: 50%;
+  }
+  div #box1{
+    position: absolute;
+    float: left;
+    border-right: solid 2px green;
+
+  }
+  div #box2{
+    padding-left: 50%;
+    border-bottom: solid 2px green;
+  }
+  div #box4{
+    padding-left: 50%;
+  }
+  div #box3{
+    position:absolute;
+    top:50%;
+    border-right: solid 2px green;
+  }
+  div #radl{
+    height: 0px;
+    width: 0px;
+    position: absolute;
+    border-left: 0px;
+    border-top: 240px solid transparent;
+    border-right:  250px solid transparent;
+    border-bottom: solid 10px green ;
+    z-index: 30;
+    animation: saomiao 5s infinite linear;
+  }
+
+  @keyframes saomiao {
+    0% {transform:rotate(0deg);transform-origin: right bottom;}
+    100% {transform: rotate(360deg);transform-origin: right bottom;}
+  }
+   
+  </style>
+  </head>
+  <body>
+    <div id="m1">
+      <div id="r1">
+          <div id="r2">
+              <div id="r3">
+              </div> 
+            </div>
+            <div id="radl"></div>
+            <div id="box1"></div>
+            <div id="box2"></div>
+            <div id="box3"></div>
+            <div id="box4"></div>
+            
+         </div>
+    </div>
+  </body>
+
+</html>
