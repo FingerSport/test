@@ -1,33 +1,49 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
-    </ul>
-    <h2>Ecosystem</h2>
-    <ul>
-      <li><a href="http://router.vuejs.org/" target="_blank">vue-router</a></li>
-      <li><a href="http://vuex.vuejs.org/" target="_blank">vuex</a></li>
-      <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
-    </ul>
+    <el-container id="layout1"> 
+      <el-header> 彩票选择系统</el-header>
+      </v-container>
+      <el-aside > 
+        <!-- //todo  -->
+       {{value1}}
+      <el-date-picker
+      v-model="value1"
+      type="date"
+      placeholder="选择日期"
+      >
+    </el-date-picker>
+      </el-aside>
+      <el-main>
+        <!-- //todo -->
+        <el-card class="box-card">
+        <div slot="header" class="clearfix">
+          <span>{{this.value1}}</span>
+          <el-button style="float: right; padding: 3px 0" type="text">操作按钮</el-button>
+        </div>
+          <div v-for="o in 4" :key="o" class="text item">
+            {{'列表内容 ' + o }}
+          </div>
+        </el-card>
+
+      </el-main>
+   </el-container>
   </div>
-</template>
+  </template>
 
 <script>
 export default {
   name: 'app',
   data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
-    }
+    return { msg: 'Welcome to Your Vue.js App',
+             value1:'时间日期'
+               }
+         },
+  method:{
+
   }
-}
+  }
+
+
 </script>
 
 <style lang="scss">
@@ -39,22 +55,25 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+.text {
+    font-size: 14px;
+  }
 
-h1, h2 {
-  font-weight: normal;
-}
+  .item {
+    margin-bottom: 18px;
+  }
 
-ul {
-  list-style-type: none;
-  padding: 0;
-}
+  .clearfix:before,
+  .clearfix:after {
+    display: table;
+    content: "";
+  }
+  .clearfix:after {
+    clear: both
+  }
 
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
+  .box-card {
+    width: 480px;
+  }
 
-a {
-  color: #42b983;
-}
 </style>
